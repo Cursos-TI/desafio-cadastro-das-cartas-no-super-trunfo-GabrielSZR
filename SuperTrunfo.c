@@ -6,18 +6,16 @@ int main(){
     char NomedaCapital1[31];
     int Populacao1;
     int NumeroDePontosTuristicos1;
-    int AreaEmKm1;
-    float Pib1;
-/*eu coloquei a area em int porque em float não é possivel representar milhares que é normalmente
-o número que usam na área em km².*/
+    float AreaEmKm1;
+    float DensidadePopulacional1, PibPerCapita1, Pib1;
 
     char NomeDoEstado2[20];
     char CodigoDaCarta2[21];
     char NomedaCapital2[22];
     int Populacao2;
     int NumeroDePontosTuristicos2;
-    int AreaEmKm2;
-    float Pib2;
+    float AreaEmKm2;
+    float DensidadePopulacional2, PibPerCapita2, Pib2;
 
     //criação da primeira carta//
 
@@ -26,15 +24,15 @@ o número que usam na área em km².*/
 
     printf("Insira um codigo para a primeira carta: \n");
     scanf("%s", CodigoDaCarta1);
-    
+
     printf("Nome da capital: \n");
     scanf("%s", NomedaCapital1);
-    
+
     printf("Digite o numero populacional: \n");
     scanf("%d", &Populacao1);
 
     printf("Digite a area do estado em km quadrados: \n");
-    scanf("%d", &AreaEmKm1);
+    scanf("%f", &AreaEmKm1);
 
     printf("Digite o pib do estado: \n");
     scanf("%f", &Pib1);
@@ -49,15 +47,15 @@ o número que usam na área em km².*/
 
     printf("Insira um codigo para a Segunda carta: \n");
     scanf("%s", CodigoDaCarta2);
-    
+
     printf("Nome da capital: \n");
     scanf("%s", NomedaCapital2);
-    
+
     printf("Digite o numero populacional: \n");
     scanf("%d", &Populacao2);
 
     printf("Digite a area do estado em km quadrados: \n");
-    scanf("%d", &AreaEmKm2);
+    scanf("%f", &AreaEmKm2);
 
     printf("Digite o pib do Estado: \n");
     scanf("%f", &Pib2);
@@ -66,6 +64,10 @@ o número que usam na área em km².*/
     scanf("%d", &NumeroDePontosTuristicos2);
 
     printf("\n");
+
+    //Operadores aritiméticos para calcular a densidade populacional e o pib per capita da primeira carta.
+    DensidadePopulacional1 = (float) Populacao1 / AreaEmKm1;
+    PibPerCapita1 = Pib1 / (float) Populacao1;
 
     //Dados da primeira carta//
 
@@ -78,14 +80,21 @@ o número que usam na área em km².*/
     printf("Nome da capital: %s \n", NomedaCapital1);
 
     printf("Numero populacional: %d \n", Populacao1);
-    
-    printf("Area em km quadrados: %d \n", AreaEmKm1);
 
-    printf("Pib do estado: %.3f \n", Pib1);
+    printf("Area em km quadrados: %f \n", AreaEmKm1);
+
+    printf("Pib do estado: %.2f \n", Pib1);
 
     printf("Pontos turisticos do estado:%d \n", NumeroDePontosTuristicos1);
 
+    printf("Densidade populacional da primeira carta: %.2f\n", DensidadePopulacional1);
+
+    printf("Pib per capita da primeira carta: %.2f\n", PibPerCapita1);
+
     printf("\n");
+    //Operadores aritiméticos para calcular a densidade populacional e o pib per capita da segunda carta.
+    DensidadePopulacional2 = (float) Populacao2 / AreaEmKm2;
+    PibPerCapita2 = Pib2 / (float) Populacao2;
 
     //Dados da segunda carta//
 
@@ -99,15 +108,15 @@ o número que usam na área em km².*/
 
     printf("Numero populacional: %d \n", Populacao2);
 
-    printf("Area em km quadrados: %d \n", AreaEmKm2);
+    printf("Area em km quadrados: %f \n", AreaEmKm2);
 
-    printf("Pib do estado: %.3f \n", Pib2);
+    printf("Pib do estado: %.2f \n", Pib2);
 
     printf("Pontos turisticos totais do estado:%d \n", NumeroDePontosTuristicos2);
 
-    return 0;
+    printf("Densidade populacional da segunda carta: %.2f\n", DensidadePopulacional2);
 
- /*Não ensinaram a progamar um codigo para refazer todas as escritas que você fez caso tenha
-    errado algo da carta então acabei não colocando algo para confirmar se os dados estão corretos e para
-    corrigir eles.*/
+    printf("Pib per capita da segunda carta: %.2f\n", PibPerCapita2);
+
+    return 0;
 }
