@@ -132,7 +132,7 @@ int main(){
 
     printf("Pib per capita da carta 1: %.2f\n", PibPerCapita2);
 
-    print("\n");
+    printf("\n");
     
     printf("Digite ok para proseguir:");
     scanf("%s", ok);
@@ -147,6 +147,12 @@ int main(){
     printf("densidade populacional: carta %d venceu\n", DensidadePopulacional1 < DensidadePopulacional2);
     printf("pib per capita: carta %d venceu\n", PibPerCapita1 > PibPerCapita2);
     printf("super poder: carta %d venceu\n", SuperPoder1 > SuperPoder2);
+    //inicio do conceito if
+    if (DensidadePopulacional1 < DensidadePopulacional2) {
+        printf("carta 1 venceu\n");
+    } else{
+        printf("carta 0 venceu\n");
+    }
 
     return 0;
 
